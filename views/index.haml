@@ -2,5 +2,10 @@
   = @title
 
 %h2 Search Image on Tiqav
-- url = "#{app_root}/ちくわ.jpg"
-%a{:href => url}= url
+%ul
+  - ['ちくわ', 'ひどい', 'ヤバイ', 'できない'].each do |word|
+    - url = "#{app_root}/#{word}.jpg"
+    %li
+      %a{:href => url}
+        %img{:src => url}
+        %span= url
