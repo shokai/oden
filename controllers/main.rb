@@ -3,7 +3,7 @@ before '/*.json' do
 end
 
 get '/' do
-  @title = Conf['title']
+  @title = 'Oden'
   haml :index
 end
 
