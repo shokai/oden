@@ -8,6 +8,7 @@ def no_image
 end
 
 def sample_exists_image(images)
+  images = images.clone
   loop do
     break if images.empty?
     img = images.delete_at(rand images.size)
