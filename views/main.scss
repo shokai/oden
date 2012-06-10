@@ -21,3 +21,8 @@ body {
   background-color : rgb(20,10,10);
   color : $font_white;
 }
+
+#samples input.img_tag {
+  width : 500px;
+  font-size : 100%;
+}

@@ -1,11 +1,14 @@
 - content_for :title do
   = @title
 
-%h2 Search Image on Tiqav
-%ul
-  - ['ちくわ', 'ひどい', 'ヤバイ', 'できない'].each do |word|
+%h2
+  Search Image on
+  %a{:href => 'http://tiqav.com'} Tiqav.com
+%ul#samples
+  - ['ありがとう', 'ちくわ', '無理', '駄目', 'できない'].each do |word|
     - url = "#{app_root}/#{word}.jpg"
     %li
+      %input{:type => :text, :value => "<img src=\"#{url}\">", :class => :img_tag}
+      %br
       %a{:href => url}
         %img{:src => url}
-        %span= url
