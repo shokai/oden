@@ -8,9 +8,9 @@ get '/' do
 end
 
 get '/:word.jpg' do
-  puts @word = params[:word]
+  @word = params[:word]
   begin
-    img = Tiqav.search(@word).choice
+    img = Tiqav.search(@word).sample
     redirect img.url.to_s
   rescue => e
     STDERR.puts e
