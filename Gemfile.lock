@@ -8,7 +8,7 @@ GEM
       thor (>= 0.13.6)
     haml (3.1.6)
     json (1.7.3)
-    nokogiri (1.5.2)
+    nokogiri (1.5.3)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
