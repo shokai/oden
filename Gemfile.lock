@@ -34,6 +34,7 @@ GEM
     tilt (1.3.3)
     tiqav (0.0.1)
       nokogiri (>= 1.5.2)
+    tmp_cache (0.0.3)
 
 PLATFORMS
   ruby
@@ -48,3 +49,4 @@ DEPENDENCIES
   sinatra-contrib
   thin
   tiqav
+  tmp_cache

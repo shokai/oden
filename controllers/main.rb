@@ -10,8 +10,8 @@ end
 get '/:word.jpg' do
   @word = params[:word]
   begin
-    img = Tiqav.search(@word).sample
-    redirect img.url.to_s
+    imgs = TmpCache.get(@word) || TmpCache.set(@word, Tiqav.search(@word), 60*60*6)
+    redirect imgs.sample.url.to_s
   rescue => e
     STDERR.puts e
     status 500
