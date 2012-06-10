@@ -11,6 +11,11 @@ def sample_exists_image(images)
   loop do
     break if images.empty?
     img = images.delete_at(rand images.size)
-    return img if img.exists?
+    case TmpCache.get("exists?_#{img.id}")
+    when true
+      return img
+    when nil
+      return img if TmpCache.set("exists?_#{img.id}", img.exists?, 60*30)
+    end
   end
 end

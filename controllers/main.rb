@@ -10,7 +10,7 @@ end
 get '/:word.jpg' do
   @word = params[:word]
   begin
-    imgs = TmpCache.get(@word) || TmpCache.set(@word, Tiqav.search(@word), 60*60*6)
+    imgs = TmpCache.get("word_#{@word}") || TmpCache.set("word_#{@word}", Tiqav.search(@word), 60*60*6)
     img = sample_exists_image(imgs)
     redirect img ? img.url.to_s : no_image
   rescue => e
