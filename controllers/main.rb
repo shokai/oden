@@ -7,8 +7,8 @@ get '/' do
   haml :index
 end
 
-get '*.jpg' do
-  @word = params[:splat].first
+get '/:word.jpg' do
+  puts @word = params[:word]
   begin
     img = Tiqav.search(@word).choice
     redirect img.url.to_s
