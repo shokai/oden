@@ -9,6 +9,12 @@ end
 
 get '*.jpg' do
   @word = params[:splat].first
-  img = Tiqav.search(@word).choice
-  redirect img.url.to_s
+  begin
+    img = Tiqav.search(@word).choice
+    redirect img.url.to_s
+  rescue => e
+    STDERR.puts e
+    status 500
+    @mes = e.to_s
+  end
 end
