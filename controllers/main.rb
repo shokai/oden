@@ -7,7 +7,7 @@ get '/' do
   haml :index
 end
 
-get '/:word.jpg' do
+get '/:word' do
   @word = params[:word]
   begin
     imgs = TmpCache.get("word_#{@word}") || TmpCache.set("word_#{@word}", Tiqav.search(@word), 60*60*6)

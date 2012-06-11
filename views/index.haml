@@ -6,7 +6,7 @@
   %a{:href => 'http://tiqav.com'} Tiqav.com
 %ul#samples
   - ['ありがとう', 'ちくわ', '無理', '駄目', 'できない'].each do |word|
-    - url = "#{app_root}/#{word}.jpg"
+    - url = "#{app_root}/#{word}"
     %li
       %input{:type => :text, :value => "<img src=\"#{url}\">", :class => :img_tag}
       %br
